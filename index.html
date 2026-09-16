@@ -14,63 +14,98 @@
 </head>
 <style>
 
+    body {
+      background-color: #f0f2f5;
+      font-family: sans-serif;
+      background-image: url(https://media1.tenor.com/m/VXK2tjK7Uh0AAAAC/pixel-art.gif);
+      background-repeat: no-repeat;
+      background-size: cover; 
+    }
+
     #div1 {
-    background-color: yellow;
+    background-color: rgb(222, 183, 132);
     padding: 30px;
     border-radius: 10px;
    }
 
    #div2 {
-    background-color: yellow;
+    background-color: rgb(222, 183, 132);
     padding: 30px;
     border-radius: 10px;
     max-width: 500px;
     margin: 50px auto;
    }
 
+    #receipt {
+    background-color:  rgb(222, 183, 132);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 50px auto;
+   }
+
+   #register {
+    text-align: center;
+    color: brown;
+    background-color: rgb(222, 183, 132);
+   }
+
+   
+
 </style>
 <body>
 
-    <h1 id="register">Register</h1>
+<h1 id="register">☕ Le Blanc Cafe </h1>
 
 <br>
 
-<div id="div1"></div>
+<div id="div1">
+    <h2>☕~ Le Blanc Menu ~☕</h2>
+    <p>Welcome to Le Blanc! Please select your desired items from our menu below. Once you've made your selections, click the "Order" button to proceed with your order. Enjoy your meal!</p>
+</div>
 
 <br>
 
 <div id="div2">
-    <h1>PY-Numbers</h1>
+    <h2>☕~ Order Form ~☕</h2><p>😼meheheh ~ !</p>
+
+<form action="">
+    
+    <input type="checkbox" id="Curry" value="100">
+    <label for="Curry" id="label1">Curry: ₱100</label>
     <br>
 
-    <form>
-       
+    <input type="checkbox" id="Coffee" value="80">
+    <label for="Coffee" id="label2">Coffee: ₱80</label>
+    <br>
 
-        <input type="checkbox" id="item1" value=129>
-        <label for='item1' id="label1">Spanish Latte</label>
+    <input type="checkbox" id="Udon" value="150">
+    <label for="Udon" id="label3">Udon: ₱150</label>
+    <br>
 
-        <input type="checkbox" id="item2" value=256>
-        <label for='item2' id="label2">Spanish Latte</label>
+    <input type="checkbox" id="Futaba Cake" value="400">
+    <label for="Futaba Cake" id="label4">Futaba Cake: ₱400</label>
+    <br>
 
-        <input type="checkbox" id="item3" value=50>
-        <label for='item3' id="label3">Spanish Latte</label>
+    <input type="checkbox" id="Calling Card" value="85">
+    <label for="Calling Card" id="label5">Calling Card: ₱85</label>
+    <br><br>
 
-        <input type="checkbox" id="item4" value=300>
-        <label for='item4' id="label4">Spanish Latte</label>
-
-
-
-        <br><br>
-        <button type = "button" py-click="create_order">Create Order</button>
-
-
+    <button type="button" py-click="create_order">Order</button>
     </form>
+    </div>
 
-    <div id="output1"></div>
-    <div id="output2"></div>
-    <div id="output3"></div>
+
+    <div id="receipt">
+        <h2>☕~ Receipt ~☕</h2>
+    <div id="Subtotal">Subtotal: ₱</div>
+    <div id="VAT">VAT: ₱</div>
+    <div id="Total Amount">Total Amount:  ₱</div>
+    </div>
+
 
     <script type="py" src="main.py"></script>
+
 
 </body>
 </html>

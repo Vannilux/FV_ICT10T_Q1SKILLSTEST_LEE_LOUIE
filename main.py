@@ -1,23 +1,37 @@
-from pyscript import display, document
-
-#OPERATIONS
-#FLOOR /
-# ADD +
-# SUBTRACT -
-# MODULO %
-
+from pyscript import document, display
 
 def create_order(e):
-    document.getElementById("output2").innerHTML = "" # clears previous output
-    prod1= document.getElementById("item1")
-    prod2= document.getElementById("item2")
-    prod3= document.getElementById("item3")
-    prod4= document.getElementById("item4")
-    # Calculate
-    subtotal = float(prod1.value) + prod1.checked
-    display(subtotal, target="output2")
-    subtotal = float(prod1.value) + prod1.checked
-    size = document.querySelector('input[name="size"]:checked')
-    size_prize = float(size.value)
-    grandtotal = subtotal + size_prize
-    display(grandtotal, target="output2")
+    document.getElementById("Subtotal").innerHTML = "" # clears previous output, applies to VAT TAX and Total Amount
+    document.getElementById("VAT").innerHTML = ""
+    document.getElementById("Total Amount").innerHTML = ""
+
+    curry = document.getElementById('Curry') 
+    curryprice = float(curry.value) * curry.checked
+
+    coffee = document.getElementById('Coffee')
+    coffeepice = float(coffee.value) * coffee.checked
+
+    Udon = document.getElementById('Udon')
+    Udonprice = float(Udon.value) * Udon.checked
+
+    futabacake = document.getElementById('Futaba Cake')
+    futabacakeprice = float(futabacake.value) * futabacake.checked
+
+    callingcard = document.getElementById('Calling Card')
+    callingcardprice = float(callingcard.value) * callingcard.checked
+
+    sub = curryprice + coffeepice + Udonprice + futabacakeprice + callingcardprice
+
+    vat = sub * 0.12 
+
+    total = vat + sub 
+
+
+    Sub = f"Subtotal: ₱{sub:.2f}"
+    display(Sub, target = "Subtotal") 
+
+    Vat = f"VAT: ₱{vat:.2f}"
+    display(Vat, target = "VAT")
+
+    Total = f"Total: ₱{total:.2f}"
+    display(Total, target = "Total Amount")
